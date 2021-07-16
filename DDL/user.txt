@@ -1,0 +1,21 @@
+-- Table: public.user
+
+-- DROP TABLE public."user";
+
+CREATE TABLE public."user"
+(
+    userid smallint NOT NULL,
+    fullname character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    user_email character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    user_password character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    user_word character varying(100) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT user_pkey PRIMARY KEY (userid),
+    CONSTRAINT user_email_key UNIQUE (user_email)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public."user"
+    OWNER to hza18wtu;

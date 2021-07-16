@@ -1,0 +1,21 @@
+-- Table: public.checker
+
+-- DROP TABLE public.checker;
+
+CREATE TABLE public.checker
+(
+    checkerid integer NOT NULL,
+    userid smallint,
+    CONSTRAINT checker_pkey PRIMARY KEY (checkerid),
+    CONSTRAINT checker_userid_fkey FOREIGN KEY (userid)
+        REFERENCES public."user" (userid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.checker
+    OWNER to hza18wtu;

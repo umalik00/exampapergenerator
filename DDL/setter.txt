@@ -1,0 +1,21 @@
+-- Table: public.setter
+
+-- DROP TABLE public.setter;
+
+CREATE TABLE public.setter
+(
+    setterid integer NOT NULL,
+    userid smallint,
+    CONSTRAINT setter_pkey PRIMARY KEY (setterid),
+    CONSTRAINT setter_userid_fkey FOREIGN KEY (userid)
+        REFERENCES public."user" (userid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE CASCADE
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.setter
+    OWNER to hza18wtu;

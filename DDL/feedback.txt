@@ -1,0 +1,22 @@
+-- Table: public.feedback
+
+-- DROP TABLE public.feedback;
+
+CREATE TABLE public.feedback
+(
+    feedbackid integer NOT NULL,
+    questionid integer NOT NULL,
+    feedback character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT feedback_pkey PRIMARY KEY (feedbackid),
+    CONSTRAINT feedback_questionid_fkey FOREIGN KEY (questionid)
+        REFERENCES public.question (questionid) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.feedback
+    OWNER to hza18wtu;

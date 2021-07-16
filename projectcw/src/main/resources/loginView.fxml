@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
+
+   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="5.0" prefHeight="120.0" prefWidth="600.0" text="Exam Paper Generating System">
+      <font>
+         <Font name="System Bold" size="22.0" />
+      </font>
+   </Label>
+   <TextField fx:id="loginUsernameField" layoutX="222.0" layoutY="158.0" prefHeight="30.0" prefWidth="294.0" />
+   <PasswordField fx:id="logInPasswordField" layoutX="222.0" layoutY="208.0" prefHeight="30.0" prefWidth="294.0" />
+   <Text layoutX="134.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Text>
+   <Text layoutX="136.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Text>
+   <Button fx:id="loginLoginButton" layoutX="474.0" layoutY="299.0" mnemonicParsing="false" onAction="#loginButtonClick" prefHeight="26.0" prefWidth="90.0" text="Log In" />
+   <Button fx:id="loginBackButton" layoutX="474.0" layoutY="334.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="26.0" prefWidth="90.0" text="Back" />
+   <Button fx:id="loginForgotPasswordButton" layoutX="303.0" layoutY="334.0" mnemonicParsing="false" onAction="#forgotPassword" prefHeight="26.0" prefWidth="139.0" text="Forgot Password" />
+</AnchorPane>

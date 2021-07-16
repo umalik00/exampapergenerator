@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mainMenuController">
+   <children>
+      <Text fx:id="test" layoutX="53.73668212890624" layoutY="87.921875" strokeType="OUTSIDE" strokeWidth="0.0" text="k" textAlignment="CENTER" wrappingWidth="492.53668212890625" AnchorPane.bottomAnchor="306.0546875" AnchorPane.leftAnchor="53.73668212890624" AnchorPane.rightAnchor="53.726635742187455" AnchorPane.topAnchor="62.0234375">
+         <font>
+            <Font name="System Italic" size="24.0" />
+         </font></Text>
+      <Button fx:id="mainMenuLogOffButton" layoutX="530.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoff" text="Log Off" />
+      <Button fx:id="modulesButton" layoutX="178.0" layoutY="164.0" mnemonicParsing="false" onAction="#openModules" prefHeight="26.0" prefWidth="230.0" text="Modules" />
+      <Button fx:id="questionsButton" layoutX="178.0" layoutY="261.0" mnemonicParsing="false" onAction="#openQuestions" prefHeight="26.0" prefWidth="230.0" text="Questions" />
+      <Button fx:id="examsButton" layoutX="178.0" layoutY="211.0" mnemonicParsing="false" onAction="#openExams" prefHeight="26.0" prefWidth="230.0" text="Exams" />
+      <Button fx:id="imagesButton" layoutX="178.0" layoutY="309.0" mnemonicParsing="false" onAction="#openImages" prefHeight="26.0" prefWidth="230.0" text="Images" />
+   </children>
+</AnchorPane>

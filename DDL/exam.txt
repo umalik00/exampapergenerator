@@ -1,0 +1,33 @@
+-- Table: public.exam
+
+-- DROP TABLE public.exam;
+
+CREATE TABLE public.exam
+(
+    examid integer NOT NULL,
+    exam_year smallint NOT NULL,
+    moduleid integer,
+    exam_title character varying(50) COLLATE pg_catalog."default",
+    checkerid integer,
+    setterid integer,
+    CONSTRAINT exam_pkey PRIMARY KEY (examid),
+    CONSTRAINT exam_checkerid_fkey FOREIGN KEY (checkerid)
+        REFERENCES public."user" (userid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT exam_moduleid_fkey FOREIGN KEY (moduleid)
+        REFERENCES public.module (moduleid) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION,
+    CONSTRAINT exam_setterid_fkey FOREIGN KEY (setterid)
+        REFERENCES public."user" (userid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.exam
+    OWNER to hza18wtu;

@@ -1,0 +1,23 @@
+-- Table: public.image
+
+-- DROP TABLE public.image;
+
+CREATE TABLE public.image
+(
+    imageid integer NOT NULL,
+    questionid integer NOT NULL,
+    image character varying COLLATE pg_catalog."default" NOT NULL,
+    caption character varying COLLATE pg_catalog."default",
+    CONSTRAINT image_pkey PRIMARY KEY (imageid),
+    CONSTRAINT image_questionid_fkey FOREIGN KEY (questionid)
+        REFERENCES public.question (questionid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.image
+    OWNER to hza18wtu;

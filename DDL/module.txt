@@ -1,0 +1,20 @@
+-- Table: public.module
+
+-- DROP TABLE public.module;
+
+CREATE TABLE public.module
+(
+    moduleid integer NOT NULL,
+    module_name character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    module_code character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT module_pkey PRIMARY KEY (moduleid),
+    CONSTRAINT module_code_key UNIQUE (module_code),
+    CONSTRAINT module_name_key UNIQUE (module_name)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.module
+    OWNER to hza18wtu;

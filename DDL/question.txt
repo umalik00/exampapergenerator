@@ -1,0 +1,31 @@
+-- Table: public.question
+
+-- DROP TABLE public.question;
+
+CREATE TABLE public.question
+(
+    questionid integer NOT NULL,
+    examid integer NOT NULL,
+    question_number character varying COLLATE pg_catalog."default",
+    question_header character varying COLLATE pg_catalog."default",
+    question_answer character varying COLLATE pg_catalog."default",
+    question_mark character varying COLLATE pg_catalog."default",
+    subquestion integer,
+    question_difficulty integer,
+    CONSTRAINT question_pkey PRIMARY KEY (questionid),
+    CONSTRAINT question_examid_fkey FOREIGN KEY (examid)
+        REFERENCES public.exam (examid) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION,
+    CONSTRAINT question_subquestion_fkey FOREIGN KEY (subquestion)
+        REFERENCES public.question (questionid) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.question
+    OWNER to hza18wtu;

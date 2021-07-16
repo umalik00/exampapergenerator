@@ -1,0 +1,26 @@
+-- Table: public.exam_questions
+
+-- DROP TABLE public.exam_questions;
+
+CREATE TABLE public.exam_questions
+(
+    exam_questionsid integer NOT NULL,
+    examid integer NOT NULL,
+    questionid integer NOT NULL,
+    CONSTRAINT exam_questions_pkey PRIMARY KEY (exam_questionsid),
+    CONSTRAINT exam_questions_examid_fkey FOREIGN KEY (examid)
+        REFERENCES public.exam (examid) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE NO ACTION,
+    CONSTRAINT exam_questions_questionid_fkey FOREIGN KEY (questionid)
+        REFERENCES public.question (questionid) MATCH SIMPLE
+        ON UPDATE CASCADE
+        ON DELETE CASCADE
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.exam_questions
+    OWNER to hza18wtu;
